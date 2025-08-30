@@ -94,8 +94,15 @@ st.subheader("🌍 Regional EV vs Petrol Adoption")
 df_regions["ev_share"] = (df_regions["electric_cars"] /
                           (df_regions["electric_cars"] + df_regions["petrol_cars"])) * 100
 
+# 🔹 Apply filter only if a specific state is chosen
+if selected_region != "All":
+    df_regions_filtered = df_regions[df_regions["geoname"] == selected_region]
+else:
+    df_regions_filtered = df_regions
+
+# Plot using filtered data
 fig2, ax2 = plt.subplots(figsize=(12, 6))
-df_regions.sort_values("ev_share", ascending=False).plot(
+df_regions_filtered.sort_values("ev_share", ascending=False).plot(
     kind="bar", x="geoname", y="ev_share", ax=ax2, color="green", legend=False
 )
 ax2.set_ylabel("EV Share %")
@@ -104,8 +111,11 @@ plt.xticks(rotation=90, ha="center")
 plt.tight_layout()
 st.pyplot(fig2)
 
-# Show table too
-st.dataframe(df_regions[["geoname", "electric_cars", "petrol_cars", "ev_share"]].sort_values("ev_share", ascending=False))
+# Show filtered table
+st.dataframe(df_regions_filtered[["geoname", "electric_cars", "petrol_cars", "ev_share"]]
+             .sort_values("ev_share", ascending=False))
+
+
 
 # ========================
 # Chart 3: Year-over-Year Growth
