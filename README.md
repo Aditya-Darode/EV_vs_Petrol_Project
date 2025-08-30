@@ -14,29 +14,31 @@ Key highlights:
 ---
 
 ##  Live Demo
-👉 [Streamlit Dashboard](https://evvspetrolproject-mjmgczbno7fdstqqewud96.streamlit.app)
+ [Streamlit Dashboard](https://evvspetrolproject-mjmgczbno7fdstqqewud96.streamlit.app)
 
 ---
 
 ##  Project Structure
+```bash
 EV_vs_Petrol_Project/
 │
-├── data/ # Raw and processed CSV files
-│ ├─ ev_vs_petrol_india_timeseries.csv
-│ ├─ ev_vs_petrol_india_regions.csv
-│ └─ ev_vs_petrol_yoy.csv
+├── data/               # Raw and processed CSV files
+│   ├─ ev_vs_petrol_india_timeseries.csv
+│   ├─ ev_vs_petrol_india_regions.csv
+│   └─ ev_vs_petrol_yoy.csv
 │
-├── results/ # Generated PNG visualizations
-│ ├─ ev_vs_petrol_trends.png
-│ ├─ ev_vs_petrol_yoy.png
-│ └─ top_states_ev.png
+├── results/            # Generated PNG visualizations
+│   ├─ ev_vs_petrol_trends.png
+│   ├─ ev_vs_petrol_yoy.png
+│   └─ top_states_ev.png
 │
-├── src/ # Python scripts
-│ ├─ extract_data.py # Collects Google Trends data (Pytrends)
-│ ├─ visualization.py # Generates static charts (Matplotlib)
-│ └─ streamlit_app.py # Interactive dashboard (Streamlit)
+├── src/                # Python scripts
+│   ├─ extract_data.py        # Collects Google Trends data (Pytrends)
+│   ├─ visualization.py       # Generates static charts (Matplotlib)
+│   └─ streamlit_app.py       # Interactive dashboard (Streamlit)
 │
-├── queries.sql # BigQuery SQL for YoY and aggregated analysis
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+├── queries.sql         # BigQuery SQL for YoY and aggregated analysis
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+
 
